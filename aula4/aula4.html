@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Novo Aluno</title>
+</head>
+<body>
+<h2>Portal de Novos Alunos da Fatec</h2>
+
+<!-- Abertura da tag de formulário -->
+<form action="#" method="post">
+
+<!-- 1. Nome Completo (Caixa de texto obrigatória) -->
+<div>
+<label for="nome">Nome Completo:</label><br>
+<input type="text" id="nome" name="nome" required>
+</div>
+<br>
+
+<!-- 2. E-mail de Contato (Validação nativa de formato) -->
+<div>
+<label for="email">E-mail de Contato:</label><br>
+<input type="email" id="email" name="email" required>
+</div>
+<br>
+
+<!-- 3. Período de Estudo (Botões de opção excludentes) -->
+<div>
+<p style="margin-bottom: 5px; margin-top: 0;">Período de Estudo:</p>
+<!-- Agrupados pelo atributo name="periodo" -->
+<input type="radio" id="manha" name="periodo" value="manha" required>
+<label for="manha">Manhã</label>
+
+<input type="radio" id="noite" name="periodo" value="noite">
+<label for="noite">Noite</label>
+</div>
+<br>
+
+<!-- 4. Curso de Interesse (Caixa de listagem suspensa) -->
+<div>
+<label for="curso">Curso de Interesse:</label><br>
+<select id="curso" name="curso" required>
+<!-- A primeira opção vazia força o usuário a fazer uma escolha -->
+<option value="">Selecione um curso...</option>
+<option value="ads">Análise e Desenvolvimento de Sistemas (ADS)</option>
+<option value="bd">Banco de Dados</option>
+<option value="gti">Gestão da Tecnologia da Informação</option>
+<option value="redes">Redes de Computadores</option>
+</select>
+</div>
+<br>
+
+<!-- 5. Botão de Envio (Dispara as validações) -->
+<div>
+<button type="submit">Enviar Cadastro</button>
+</div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aula 06</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <h1> Portal do Aluno - Novo Cadastro </h1> 
+    <hr size="1">
+    
+    <!-- Retirando o action para focar apenas no JavaScript local -->
+
+    <form id="formCadastro">
+        <label for="nmCompleto"> Nome Completo</label><br>
+        <input type="text" id="nmCompleto" name="nome" placeholder="Digite seu nome" >
+        <br><br>
+        
+        <label for="emailContato">E-mail para Institucional</label><br>
+        <input type="text" id="emailContato" name="E-mail" placeholder="nomealuno@aluno.cps.sp.gov.br" required>
+        <br><br>
+
+        <p> Selecione um Turno de Estudo: </p>
+        <input type="radio" id="turnoManha" name="turno" value="manha" required>
+        <label for="turnoManha">Manhã</label><br>
+        <input type="radio" id="turnoVespertino" name="turno" value="vespertino" required>
+        <label for="turnoVespertino">Vespertino</label><br>
+        <input type="radio" id="turnoNoite" name="turno" value="noite" required>
+        <label for="turnoNoite">Noite</label><br>
+        <br><br>
+
+        <label for="cursoSelecionado">Curso de Interesse</label><br>
+            <select id="cursoSelecionado" name="curso" required>
+                <option value="">---- Selecione um Curso ----</option>
+                <option value="ads">Analise e Desenvolvimento de Sistemas</option>
+                <option value="dsm">Desenvolvimento Multiplataforma</option>
+                <option value="comex">Comercio Exterior</option>
+                <option value="ge">Gestão empresarial</option>
+            </select>
+            <br><br>
+
+            <!-- Botão alterado para chamar a função do JavaScript -->
+             <button type="button" onclick="realizarCadastro()">Finalizar Cadastro </button>
+     </form>
+
+     <!-- Elemento HTML vazio aguardando a saída de dados -->
+      <div id="mensagemSistema" style="text-align: center; margin-top:20px; font-size:18px; font-weight: bold; color: blueviolet;">
+      </div>
+      <!-- Vincular ao arquivo JavaScript -->
+       <script src="script.js"></script>
+</body>
+</html>

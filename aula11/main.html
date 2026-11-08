@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Acadêmico - Fatec</title>
+    
+    <!-- CSS INTERNO -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #b30000;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .card h2 {
+            color: #b30000;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .instruction {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-left: 4px solid #b30000;
+            border-radius: 4px;
+        }
+
+        .instruction code {
+            background-color: #d1d5db;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Sistema Acadêmico Fatec</h1>
+            <p>Módulo de Processamento de Notas e Frequência</p>
+        </header>
+
+        <main class="content">
+            <div class="card">
+                <h2>Exercício Prático</h2>
+                <p>O script está em execução internamente. Para visualizar os resultados das validações, condições e laços de repetição, abra as ferramentas de desenvolvedor do seu navegador:</p>
+                <div class="instruction">
+                    <p><strong>Dica:</strong> Pressione <code>F12</code> ou clique com o botão direito na página e selecione <strong>Inspecionar</strong>, depois acesse a aba <strong>Console</strong>.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JAVASCRIPT INTERNO -->
+    <script>
+        console.log("=== INICIANDO PROCESSAMENTO ACADÊMICO ===\n");
+
+        /* =========================================================================
+           1. BLOCO 1: Estruturas Condicionais e Operador Ternário
+        ========================================================================= */
+        console.log("--- 1. Validação de Situação Acadêmica ---");
+
+        // Declaração das variáveis
+        let notaFinal = 7.5; 
+        let percentualPresenca = 82; 
+        let situacao = "";
+
+        console.log(`Nota Final: ${notaFinal.toFixed(1)}`);
+        console.log(`Frequência: ${percentualPresenca}%`);
+
+        // Estrutura if...else if...else
+        if (percentualPresenca >= 75 && notaFinal >= 6.0) {
+            situacao = "Aprovado";
+        } else if (percentualPresenca < 75) {
+            situacao = "Reprovado por Faltas";
+        } else {
+            situacao = "Reprovado por Nota";
+        }
+        console.log(`Resultado: Aluno ${situacao}`);
+
+        // Operador ternário
+        let alertaPresenca = (percentualPresenca < 80) 
+            ? "⚠️ ALERTA: Presença Crítica! (Abaixo de 80%)" 
+            : "✅ Presença adequada.";
+        console.log(alertaPresenca);
+
+
+        /* =========================================================================
+           2. BLOCO 2: Seleção Múltipla (Switch-Case)
+        ========================================================================= */
+        console.log("\n--- 2. Mapeamento de Cursos ---");
+
+        let codigoCurso = 1; 
+        let nomeCurso = "";
+
+        // Estrutura switch-case
+        switch (codigoCurso) {
+            case 1:
+                nomeCurso = "Análise e Desenvolvimento de Sistemas (ADS)";
+                break;
+            case 2:
+                nomeCurso = "Gestão Empresarial";
+                break;
+            case 3:
+                nomeCurso = "Logística";
+                break;
+            default:
+                nomeCurso = "Curso Inválido ou Desconhecido";
+                break;
+        }
+
+        console.log(`Código do Curso: ${codigoCurso}`);
+        console.log(`Nome do Curso: ${nomeCurso}`);
+
+
+        /* =========================================================================
+           3. BLOCO 3: Laços de Repetição (For e While)
+        ========================================================================= */
+        console.log("\n--- 3. Processamento de Avaliações ---");
+
+        // --- Laço FOR ---
+        console.log(">> Histórico de Avaliações (Laço FOR):");
+        let numeroDeAvaliacoes = 4;
+        let somaNotas = 0;
+        let notasHistorico = [7.0, 5.5, 8.0, 9.5]; // Array simulando notas
+
+        for (let i = 1; i <= numeroDeAvaliacoes; i++) {
+            let notaAtual = notasHistorico[i - 1];
+            console.log(`Avaliação ${i}: ${notaAtual.toFixed(1)}`);
+            somaNotas += notaAtual;
+        }
+        console.log(`Média Ponderada/Simples: ${(somaNotas / numeroDeAvaliacoes).toFixed(2)}`);
+
+        // --- Laço WHILE ---
+        console.log("\n>> Inserção de Notas Válidas (Laço WHILE):");
+        let notaValida = false;
+        let tentativasCount = 0;
+        // Array simulando tentativas de digitação do usuário (erro, erro, acerto)
+        let insercoesSimuladas = [-3.0, 15.5, 8.5]; 
+
+        while (!notaValida) {
+            let notaDigitada = insercoesSimuladas[tentativasCount];
+            console.log(`Tentativa ${tentativasCount + 1} | Valor digitado: ${notaDigitada}`);
+
+            if (notaDigitada >= 0 && notaDigitada <= 10) {
+                console.log(`✅ Sucesso: A nota ${notaDigitada} é válida e foi registrada.`);
+                notaValida = true; // Satisfaz a condição de parada
+                break; // Interrompe o fluxo
+            } else {
+                console.log("❌ Erro: Valor fora do intervalo (0 a 10). Tente novamente.");
+            }
+            
+            tentativasCount++;
+            
+            // Trava de segurança no laço
+            if (tentativasCount >= insercoesSimuladas.length) {
+                console.log("Limite de tentativas de simulação excedido.");
+                break;
+            }
+        }
+
+        console.log("\n=== FIM DO PROCESSAMENTO ===");
+    </script>
+</body>
+</html>

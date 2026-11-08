@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Reserva de Equipamentos</title>
+    <!-- Vinculação do arquivo de estilo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Simulador de Reserva do Laboratório</h2>
+        
+        <div class="form-group">
+            <label for="nomeSolicitante">Nome do Aluno:</label>
+            <input type="text" id="nomeSolicitante" placeholder="Digite seu nome completo">
+        </div>
+        
+        <button onclick="realizarReserva()">Solicitar Equipamento</button>
+
+        <!-- Tag <div> vazia com atributo id para abrigar o recibo visual -->
+        <div id="recibo"></div>
+    </div>
+
+    <!-- Vinculação do arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

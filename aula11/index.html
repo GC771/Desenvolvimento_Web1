@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Caixa Eletrônico - Fintech</title>
+    
+    <!-- CSS Embutido -->
+    <style>
+        :root {
+            --cor-primaria: #6C63FF;
+            --cor-fundo: #1E1E2C;
+            --cor-card: #2B2B40;
+            --cor-texto: #FFFFFF;
+            --cor-erro: #FF6B6B;
+            --cor-sucesso: #4ECDC4;
+            --cor-alerta: #FFE66D;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--cor-card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--cor-primaria);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .grupo-entrada {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 0.9rem;
+            color: #A0A0B5;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #4B4B65;
+            background-color: #1E1E2C;
+            color: var(--cor-texto);
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input[type="number"]:focus {
+            border-color: var(--cor-primaria);
+        }
+
+        button {
+            background-color: var(--cor-primaria);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #574BFF;
+        }
+
+        .area-saida {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            background-color: #1E1E2C;
+            display: none; /* Escondido até ter conteúdo */
+        }
+
+        .erro-destaque {
+            background-color: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid var(--cor-erro);
+            color: var(--cor-erro);
+        }
+
+        .sucesso-destaque {
+            background-color: rgba(78, 205, 196, 0.1);
+            border-left: 4px solid var(--cor-sucesso);
+        }
+
+        .auditoria {
+            margin-top: 20px;
+            background-color: #1E1E2C;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px dashed #4B4B65;
+        }
+
+        .auditoria h3 {
+            font-size: 1rem;
+            color: var(--cor-alerta);
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            font-size: 0.85rem;
+            padding: 5px 0;
+            border-bottom: 1px solid #2B2B40;
+        }
+        
+        li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simulador de Caixa Eletrônico</h1>
+        <h1>Gabriel de Camargo Farias de Assunção</h1>
+        
+        <div class="grupo-entrada">
+            <label for="valorSaque">Informe o valor do saque (Múltiplos de R$ 10):</label>
+            <input type="number" id="valorSaque" placeholder="Ex: 150" min="10" step="10">
+            <!-- Botão disparando a função ao ser clicado -->
+            <button onclick="processarSaque()">Sacar Dinheiro</button>
+        </div>
+
+        <!-- Áreas de saída de dados -->
+        <div id="mensagemErro" class="area-saida erro-destaque"></div>
+        <div id="resultadoSaque" class="area-saida sucesso-destaque"></div>
+        
+        <!-- Painel de Auditoria -->
+        <div id="painelAuditoria" class="auditoria" style="display: none;"></div>
+    </div>
+
+    <!-- Referência ao arquivo externo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

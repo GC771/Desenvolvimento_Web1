@@ -1,0 +1,61 @@
+/* Estilização do corpo da página */
+body {
+    font-family: sans-serif; /* Fonte sem serifa */
+    margin: 20px; /* Margem externa padrão */
+    background-color: #f4f4f9; /* Cor de fundo clara para contraste */
+}
+
+/* Centralização do título para alinhamento com o formulário */
+h2 {
+    text-align: center;
+}
+
+/* Transformando o formulário em uma caixa centralizada */
+form {
+    max-width: 500px; /* Largura máxima */
+    padding: 30px; /* Preenchimento interno para afastar campos da borda */
+    margin: 0 auto; /* Margens externas automáticas para alinhar ao centro */
+    background-color: #ffffff; /* Cor de fundo branca */
+    border: 1px solid #cccccc; /* Borda sólida ao redor */
+    border-radius: 8px; /* Arredondamento suave das bordas da caixa */
+}
+
+/* Conforto de clique e estilização dos campos de entrada (incluindo senha) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Ocupar toda a largura disponível na div */
+    padding: 10px; /* Preenchimento interno de 10 pixels */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid #aaa; /* Borda padrão */
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do input */
+    margin-top: 5px;
+}
+
+/* Acessibilidade (WCAG) - Regras de foco (incluindo senha) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+    outline: 2px solid #00008b; /* Contorno de alto contraste (Azul Escuro) */
+    border-color: #00008b; /* Alteração da cor da borda ao focar */
+}
+
+/* Estilização do botão "Finalizar Cadastro" (Enviar Cadastro) */
+button {
+    border: none; /* Remoção da borda padrão */
+    background-color: #003366; /* Cor de fundo institucional escura */
+    color: #ffffff; /* Texto com cor branca */
+    font-weight: bold; /* Peso em negrito */
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Feedback visual de interação com o mouse */
+button:hover {
+    background-color: #001a33; /* Escurecendo levemente a cor de fundo */
+}

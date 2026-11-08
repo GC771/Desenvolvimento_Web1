@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validador de Risco Operacional (SSO)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<h1>Validador de Risco Operacional</h1>
+<form id="ssoForm" onsubmit="return false;">
+<div class="form-group">
+<label for="severidade">Severidade do Acidente (1 a 5):</label>
+<input type="number" id="severidade" name="severidade" min="1" max="5" required>
+</div>
+
+<div class="form-group">
+<label for="probabilidade">Probabilidade do Acidente (1 a 5):</label>
+<input type="number" id="probabilidade" name="probabilidade" min="1" max="5" required>
+</div>
+
+<div class="form-group checkbox-group">
+<!-- Evento onchange diretamente na caixa de seleção para limpar o resultado -->
+<input type="checkbox" id="treinamento" name="treinamento" onchange="limparResultado()">
+<label for="treinamento">Treinamento do operador válido e em dia</label>
+</div>
+
+<!-- Evento onclick para o cálculo e onmouseout para retornar a cor original -->
+<button type="button" id="btnValidar" onclick="validarRisco()" onmouseout="restaurarCorBotao(this)">
+Validar Risco
+</button>
+</form>
+
+<!-- DIV reservada para a injeção da mensagem final -->
+<div id="resultado"></div>
+</div>
+
+<!-- Vinculação do arquivo JavaScript externo no final do corpo -->
+<script src="script_sso.js"></script>
+</body>
+</html>
